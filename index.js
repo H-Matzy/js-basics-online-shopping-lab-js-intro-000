@@ -23,7 +23,8 @@ function viewCart() {
 
   for (var i=0; i < cart.length; i++){
     var price = Math.floor((Math.random() * 100) + 1);
-    solution.push(`+ ${i} at, ${price} `)
+    solution.push(`${i} at, ${price} `)
+
   }
 return solution  // write your code here
 }
