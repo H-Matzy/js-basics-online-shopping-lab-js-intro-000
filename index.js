@@ -1,4 +1,4 @@
-var cart = [];
+var cart = [] ;
 var price = Math.floor((Math.random() * 100) + 1);
 function getCart() {
  return cart;
@@ -14,7 +14,7 @@ function addToCart(item) {
   var product = { itemName: item, itemPrice: price}
   cart.push(product)
 
- return `${item} has been added to your cart.`// write your code here
+ return `${item} has been added to your cart.`
 }
 
 function viewCart() {
@@ -29,17 +29,35 @@ function viewCart() {
     var index = tempsolution.length-1
     tempsolution[index] =  " and" + tempsolution[index]}
   var solution = "In your cart, you have" + tempsolution.join() + '.'
+  var tempsolution = [ "In your cart, you have " ]
+  if (cart.length === 0) {return "Your shopping cart is empty."}
+
+  for (var i=0; i < cart.length; i++){
+    var price = Math.floor((Math.random() * 100) + 1);
+    tempsolution.push(` ${cart[i].itemName} at $${cart[i].itemPrice}`)
+    if (i=cart.length) {tempsolution.splice(i)}
+  }
 return solution
 }
 
 function total() {
-  // write your code here
+  var cost = []
+  for (var i=0; i < cart.length; i++){
+  cost.push(cart[i].itemPrice)
+  }
+  const sum = cost.reduce((total, amount) => total + amount);
+  return sum
 }
+//everthing above is final
 
 function removeFromCart(item) {
-  delete cart.item
-  if (cart.item === false) {return "That item is not in your cart."}
-}
+var tempcart = getCart()
+  for (var i=0; i < tempcart.length; i++)
+  if (tempcart[i].itemName === item){
+    delete tempcart.item
+  }
+  else {return 'That item is not in your cart.' }}
+
 
 function placeOrder(cardNumber) {
   // write your code here
