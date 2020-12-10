@@ -56,7 +56,8 @@ var tempcart = getCart()
   if (tempcart[i].itemName === item){
     delete tempcart.item
   }
-  else {return 'That item is not in your cart.' }}
+  else {return 'That item is not in your cart.' }
+}
 
 
 function placeOrder(cardNumber) {
